@@ -131,7 +131,7 @@ try {
     statement.close();
     return Response.ok(a.toJSONString()).build();
 } catch (SQLException e) {
-    return Response.serverError().build();
+    return Response.serverError().entity(e.getMessage()).build();
 }
 
   }
