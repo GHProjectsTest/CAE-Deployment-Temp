@@ -111,7 +111,7 @@ public class MusicService extends RESTService {
   })
   @ApiOperation(value = "getSongs", notes = " ")
   public Response getSongs() {
-
+     Context.get().monitorEvent(MonitoringEvent.SERVICE_MESSAGE, "getSongs called");
 
   Connection connection;
 
