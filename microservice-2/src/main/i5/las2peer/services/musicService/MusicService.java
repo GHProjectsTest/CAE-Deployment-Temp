@@ -131,6 +131,7 @@ try {
     statement.close();
     return Response.ok(a.toJSONString()).build();
 } catch (SQLException e) {
+    Context.get().monitorEvent(MonitoringEvent.SERVICE_MESSAGE, "error:" + e.getMessage());
     return Response.serverError().entity(e.getMessage()).build();
 }
 
